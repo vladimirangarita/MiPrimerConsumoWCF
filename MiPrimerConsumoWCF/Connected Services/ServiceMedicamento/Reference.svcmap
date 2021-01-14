@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="f8b9fd1e-b5b7-4e8b-bfa9-23174b824aa5" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://192.168.250.9:8081/Medicamentos.svc?wsdl" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="Medicamentos.wsdl" MetadataType="Wsdl" ID="c969ed5e-72b2-42fb-8bb7-b20f9612574e" SourceId="1" SourceUrl="http://192.168.250.9:8081/Medicamentos.svc?wsdl" />
+    <MetadataFile FileName="Medicamentos.xsd" MetadataType="Schema" ID="722eae15-cb36-4b3c-afb4-5566fcc35fd3" SourceId="1" SourceUrl="http://192.168.250.9:8081/Medicamentos.svc?xsd=xsd0" />
+    <MetadataFile FileName="Medicamentos1.xsd" MetadataType="Schema" ID="c809b70b-806e-4d55-a678-98d97ee76798" SourceId="1" SourceUrl="http://192.168.250.9:8081/Medicamentos.svc?xsd=xsd2" />
+    <MetadataFile FileName="Medicamentos2.xsd" MetadataType="Schema" ID="b248ea45-158a-47cb-b603-b0262b3fe9b6" SourceId="1" SourceUrl="http://192.168.250.9:8081/Medicamentos.svc?xsd=xsd1" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
