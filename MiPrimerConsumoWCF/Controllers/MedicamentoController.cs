@@ -28,8 +28,61 @@ namespace MiPrimerConsumoWCF.Controllers
                 ).ToList();
             return Json(lista, JsonRequestBehavior.AllowGet);
         }
-
+        public JsonResult ListarFormaFarmaceutica()
+        {
+            MedicamentosClient oMedicamentosClient = new MedicamentosClient();
+            var lista = oMedicamentosClient.ListaFormaFarmaceutica()
+            .Select(p => new
+            {
+                p.IidFormaFarmaceutica,
+                p.NombreFormaFarmaceutica
+            }).ToList();
+            return Json(lista, JsonRequestBehavior.AllowGet);
+        }
         // GET: Medicamento
+
+            public JsonResult RecuperarMedicamento(int iidMedicamento)
+        {
+            MedicamentosClient oMedicamentosClient = new MedicamentosClient();
+
+            var medicamento = oMedicamentosClient.RecuperarMedicamento(iidMedicamento);
+
+            return Json(medicamento, JsonRequestBehavior.AllowGet);
+
+        }
+        public int AgregarYEditarMedicamento(MedicamentoCLS oMedicamentoCLS)
+        {
+            int rpta = 0;
+            try
+            {
+                MedicamentosClient oMedicamentoClient = new MedicamentosClient();
+                rpta = oMedicamentoClient.RegistraryActualizarMedicamento(oMedicamentoCLS);
+            }
+            catch (Exception)
+            {
+
+                rpta = 0;
+            }
+            return rpta;
+        }
+
+        public int EliminarMedicamento(int iidMedicamento)
+        {
+
+            int rpta = 0;
+            try
+            {
+                MedicamentosClient oMedicamentoClient = new MedicamentosClient();
+                rpta = oMedicamentoClient.EliminarMedicamento(iidMedicamento);
+
+            }
+            catch (Exception)
+            {
+
+                rpta = 0;
+            }
+            return rpta;
+        }
         public ActionResult Index()
         {
             return View();
