@@ -1,10 +1,22 @@
 ﻿
 window.onload = function () {
-    ListarMedicamentos()
+    ListarMedicamentos();
+    ListarFormaFarmaceutica();
 }
 
+function ListarFormaFarmaceutica() {
+    fetch("Medicamento/ListarFormaFarmaceutica")
+        .then(res => res.json())
+        .then(res => {
+            //
+            //
+            LlenarCombo(res);
+        })
+}
 
+function LlenarCombo(res) {
 
+}
 function ListarMedicamentos() {
     fetch("Medicamento/ListarMedicamentos")
         .then(res => res.json())
