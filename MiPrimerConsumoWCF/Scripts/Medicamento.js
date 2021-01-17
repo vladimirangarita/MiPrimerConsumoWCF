@@ -15,6 +15,13 @@ function ListarFormaFarmaceutica() {
 }
 
 function LlenarCombo(res) {
+    var contenido = "";
+    contenido += "<option value=''>--Seleccione--</option>";
+    for (var i = 0; i < res.length; i++) {
+        contenido += "<option value='" + res[i].IidFormaFarmaceutica + "'>" + res[i].NombreFormaFarmaceutica +"</option>";
+    }
+    document.getElementById("cboFormaFarmaceutica").innerHTML = contenido;
+
 
 }
 function ListarMedicamentos() {
@@ -24,6 +31,16 @@ function ListarMedicamentos() {
 
             Listar(res);
         })
+}
+
+function Limpiar() {
+    var limpiar = document.getElementsByClassName("Limpiar");
+    var nlimpiar = limpiar.length;
+
+    for (var i = 0; i < nlimpiar; i++) {
+        limpiar[i].value = "";
+    }
+
 }
 
 function Listar(res) {
@@ -73,11 +90,23 @@ function Listar(res) {
 }
 
 function AbrirModal(iidMedicamento) {
-
-    if (iidMedicamento==0) {
+    Limpiar();
+    if (iidMedicamento == 0) {
         document.getElementById("lblTitulo").innerHTML = "Agregar Medicamento";
     } else {
         document.getElementById("lblTitulo").innerHTML = "Editar Medicamento";
+
+        fetch("Medicamento/RecuperarMedicamento/?iidMedicamento=" + iidMedicamento)
+            .then(res => res.json())
+            .then(res => {
+                document.getElementById("txtIdMedicamento").value = res.IidMedicamento;
+                document.getElementById("txtNombre").value = res.Nombre;
+                document.getElementById("txtConcentracion").value = res.Concentracion;
+                document.getElementById("cboFormaFarmaceutica").value = res.IidFormaFarmaceutica;
+                document.getElementById("txtPrecio").value = res.Precio;
+                document.getElementById("txtStock").value = res.Stock;
+                document.getElementById("txtPresentacion").value = res.Presentacion;
+            })
     }
 
 }
