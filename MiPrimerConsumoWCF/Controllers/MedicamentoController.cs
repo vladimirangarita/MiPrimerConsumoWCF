@@ -23,6 +23,7 @@ namespace MiPrimerConsumoWCF.Controllers
                     p.Concentracion,
                     p.NombreFormaFarmaceutica,
                     p.Stock,
+                    p.Precio,
                     p.Presentacion
                 }
                 ).ToList();
