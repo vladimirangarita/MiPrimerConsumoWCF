@@ -110,3 +110,33 @@ function AbrirModal(iidMedicamento) {
     }
 
 }
+
+function DatosObligatorios() {
+    var exito = true;
+    var contenido = "<ol style='color:red'>";
+    var controlesObligatorios = document.getElementsByClassName("Obligatorio");
+    var ncontroles = controlesObligatorios.length;
+    for (var i = 0; i < ncontroles; i++) {
+        if (controlesObligatorios[i].value == "") {
+
+            exito = false;
+            contenido +="<li>" + controlesObligatorios[i].name + "Es obligatorio</li>"
+
+        }
+        
+    }
+    contenido += "</ol>";
+    return { exito, contenido };
+}
+
+function Guardar() {
+    if (confirm("Deseas guardr los cambios?")==1) {
+        var objeto = DatosObligatorios();
+        if (objeto.exito==false) {
+            document.getElementById("divError").innerHTML = objeto.contenido;
+
+        } else {
+
+        }
+    }
+}

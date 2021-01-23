@@ -44,44 +44,47 @@
 
                     <div class="form-group">
                         <label>Nombre</label>
-                        <input type="text" class="form-control Limpiar" id="txtNombre" />
+                        <input name="Nombre" type="text" class="form-control Limpiar Obligatorio" id="txtNombre" />
 
                     </div>
 
                     <div class="form-group">
                         <label>Concentracíon</label>
-                        <input type="text" class="form-control Limpiar" id="txtConcentracion" />
+                        <input name="Concentracion" type="text" class="form-control Limpiar Obligatorio" id="txtConcentracion" />
 
                     </div>
 
                     <div class="form-group">
                         <label>Forma Farmaceutica</label>
-                        <select id="cboFormaFarmaceutica" class="form-control Limpiar"></select>
+                        <select name="forma Farmaceutica" id="cboFormaFarmaceutica" class="form-control Limpiar Obligatorio"></select>
 
                     </div>
 
                     <div class="form-group">
                         <label>Precio</label>
-                        <input type="number" class="form-control Limpiar" id="txtPrecio" />
+                        <input name="Precio" type="number" class="form-control Limpiar Obligatorio" id="txtPrecio" />
 
                     </div>
 
                     <div class="form-group">
                         <label>Stock</label>
-                        <input type="number" class="form-control Limpiar" id="txtStock" />
+                        <input name="Stock" type="number" class="form-control Limpiar Obligatorio" id="txtStock" />
 
                     </div>
 
                     <div class="form-group">
                         <label>Presentacion</label>
-                        <input type="text" class="form-control Limpiar" id="txtPresentacion" />
+                        <input name="Presentacion" type="text" class="form-control Limpiar Obligatorio" id="txtPresentacion" />
 
                     </div>
 
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-primary">Guardar</button>
+                    <button type="button" onclick="Guardar()" class="btn btn-primary">Guardar</button>
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+
+                </div>
+                <div id="divError">
 
                 </div>
             </div>
