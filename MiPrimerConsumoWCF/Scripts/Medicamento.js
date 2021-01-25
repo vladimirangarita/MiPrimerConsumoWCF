@@ -13,7 +13,19 @@ function ListarFormaFarmaceutica() {
             LlenarCombo(res);
         })
 }
-
+function FiltrarDatos() {
+    var NombreMedicamento = document.getElementById("txtBuscarNombreMedicamento").value;
+    if (NombreMedicamento!="") {
+        fetch("Medicamento/BuscarMedicamentosPorNombre/?NombreMedicamento=" + NombreMedicamento)
+            .then(res => res.json())
+            .then(res => {
+                Listar(res);
+            })
+    } else {
+        ListarMedicamentos();
+    }
+   
+}
 function LlenarCombo(res) {
     var contenido = "";
     contenido += "<option value=''>--Seleccione--</option>";

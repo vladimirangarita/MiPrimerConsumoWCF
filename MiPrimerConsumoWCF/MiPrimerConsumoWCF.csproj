@@ -135,6 +135,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Connected Services\ServiceMedicamento\Medicamentos.disco" />
     <None Include="Connected Services\ServiceMedicamento\configuration91.svcinfo" />
     <None Include="Connected Services\ServiceMedicamento\configuration.svcinfo" />
     <Content Include="Connected Services\ServiceMedicamento\MiPrimerConsumoWCF.ServiceMedicamento.FormaFarmaceuticaCLS.datasource">

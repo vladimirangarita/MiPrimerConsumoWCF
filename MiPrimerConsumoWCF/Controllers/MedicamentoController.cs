@@ -29,6 +29,27 @@ namespace MiPrimerConsumoWCF.Controllers
                 ).ToList();
             return Json(lista, JsonRequestBehavior.AllowGet);
         }
+
+        public JsonResult BuscarMedicamentosPorNombre(string NombreMedicamento)
+        {
+            MedicamentosClient oMedicamentosClient = new MedicamentosClient();
+            var lista = oMedicamentosClient.ListarMedicamentos()
+                .Where(p => p.BHabilitado == 1 && p.Nombre.ToLower().Contains(NombreMedicamento.ToLower()))
+                .Select(
+                p => new
+                {
+                    p.IidMedicamento,
+                    p.Nombre,
+                    p.Concentracion,
+                    p.NombreFormaFarmaceutica,
+                    p.Stock,
+                    p.Precio,
+                    p.Presentacion
+                }
+                ).ToList();
+            return Json(lista, JsonRequestBehavior.AllowGet);
+        }
+
         public JsonResult ListarFormaFarmaceutica()
         {
             MedicamentosClient oMedicamentosClient = new MedicamentosClient();
