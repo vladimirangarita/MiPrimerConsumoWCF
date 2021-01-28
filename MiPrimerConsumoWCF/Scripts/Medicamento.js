@@ -142,13 +142,55 @@ function DatosObligatorios() {
 }
 
 function Guardar() {
-    if (confirm("Deseas guardr los cambios?")==1) {
+    if (confirm("Deseas guardr los cambios?") == 1) {
         var objeto = DatosObligatorios();
-        if (objeto.exito==false) {
+        if (objeto.exito == false) {
             document.getElementById("divError").innerHTML = objeto.contenido;
-
+            return;
         } else {
-
+            document.getElementById("divError").innerHTML = "";
         }
+
+        //Capturar los valores
+        var IidMedicamento = document.getElementById("txtIdMedicamento").value;
+        var Nombre = document.getElementById("txtNombre").value;
+        var Concentracion = document.getElementById("txtConcentracion").value;
+        var IidFormaFarmaceutica = document.getElementById("cboFormaFarmaceutica").value;
+        var Precio = document.getElementById("txtPrecio").value;
+        var Stock = document.getElementById("txtStock").value;
+        var Presentacion = document.getElementById("txtPresentacion").value;
+        //Llamada al controller
+
+        var ObjetoEnviar = {
+            IidMedicamento,
+            Nombre,
+            Concentracion,
+            IidFormaFarmaceutica,
+            Precio,
+            Stock,
+            Presentacion
+
+
+        };
+
+        fetch("Medicamento/AgregarYEditarMedicamento", {
+
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            method: 'POST',
+            body: JSON.stringify(ObjetoEnviar)
+        }).then(res => res.json())
+            .then(res => {
+                if (res == 1) {
+                    ListarMedicamentos();
+                    document.getElementById("btnCerrar").click();
+                    alert("Se guardo");
+                } else {
+                    aler("Ocurrio error");
+                }
+
+            })
+
     }
 }
