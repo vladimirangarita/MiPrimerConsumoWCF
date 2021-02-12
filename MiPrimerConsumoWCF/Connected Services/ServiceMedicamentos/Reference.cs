@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace MiPrimerConsumoWCF.ServiceMedicamento {
+namespace MiPrimerConsumoWCF.ServiceMedicamentos {
     using System.Runtime.Serialization;
     using System;
     
@@ -248,32 +248,32 @@ namespace MiPrimerConsumoWCF.ServiceMedicamento {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceMedicamento.IMedicamentos")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceMedicamentos.IMedicamentos")]
     public interface IMedicamentos {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMedicamentos/ListarMedicamentos", ReplyAction="http://tempuri.org/IMedicamentos/ListarMedicamentosResponse")]
-        System.Collections.Generic.List<MiPrimerConsumoWCF.ServiceMedicamento.MedicamentoCLS> ListarMedicamentos();
+        System.Collections.Generic.List<MiPrimerConsumoWCF.ServiceMedicamentos.MedicamentoCLS> ListarMedicamentos();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMedicamentos/ListarMedicamentos", ReplyAction="http://tempuri.org/IMedicamentos/ListarMedicamentosResponse")]
-        System.Threading.Tasks.Task<System.Collections.Generic.List<MiPrimerConsumoWCF.ServiceMedicamento.MedicamentoCLS>> ListarMedicamentosAsync();
+        System.Threading.Tasks.Task<System.Collections.Generic.List<MiPrimerConsumoWCF.ServiceMedicamentos.MedicamentoCLS>> ListarMedicamentosAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMedicamentos/ListaFormaFarmaceutica", ReplyAction="http://tempuri.org/IMedicamentos/ListaFormaFarmaceuticaResponse")]
-        System.Collections.Generic.List<MiPrimerConsumoWCF.ServiceMedicamento.FormaFarmaceuticaCLS> ListaFormaFarmaceutica();
+        System.Collections.Generic.List<MiPrimerConsumoWCF.ServiceMedicamentos.FormaFarmaceuticaCLS> ListaFormaFarmaceutica();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMedicamentos/ListaFormaFarmaceutica", ReplyAction="http://tempuri.org/IMedicamentos/ListaFormaFarmaceuticaResponse")]
-        System.Threading.Tasks.Task<System.Collections.Generic.List<MiPrimerConsumoWCF.ServiceMedicamento.FormaFarmaceuticaCLS>> ListaFormaFarmaceuticaAsync();
+        System.Threading.Tasks.Task<System.Collections.Generic.List<MiPrimerConsumoWCF.ServiceMedicamentos.FormaFarmaceuticaCLS>> ListaFormaFarmaceuticaAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMedicamentos/RecuperarMedicamento", ReplyAction="http://tempuri.org/IMedicamentos/RecuperarMedicamentoResponse")]
-        MiPrimerConsumoWCF.ServiceMedicamento.MedicamentoCLS RecuperarMedicamento(int iidMedicamento);
+        MiPrimerConsumoWCF.ServiceMedicamentos.MedicamentoCLS RecuperarMedicamento(int iidMedicamento);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMedicamentos/RecuperarMedicamento", ReplyAction="http://tempuri.org/IMedicamentos/RecuperarMedicamentoResponse")]
-        System.Threading.Tasks.Task<MiPrimerConsumoWCF.ServiceMedicamento.MedicamentoCLS> RecuperarMedicamentoAsync(int iidMedicamento);
+        System.Threading.Tasks.Task<MiPrimerConsumoWCF.ServiceMedicamentos.MedicamentoCLS> RecuperarMedicamentoAsync(int iidMedicamento);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMedicamentos/RegistraryActualizarMedicamento", ReplyAction="http://tempuri.org/IMedicamentos/RegistraryActualizarMedicamentoResponse")]
-        int RegistraryActualizarMedicamento(MiPrimerConsumoWCF.ServiceMedicamento.MedicamentoCLS oMedicamentoCLS);
+        int RegistraryActualizarMedicamento(MiPrimerConsumoWCF.ServiceMedicamentos.MedicamentoCLS oMedicamentoCLS);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMedicamentos/RegistraryActualizarMedicamento", ReplyAction="http://tempuri.org/IMedicamentos/RegistraryActualizarMedicamentoResponse")]
-        System.Threading.Tasks.Task<int> RegistraryActualizarMedicamentoAsync(MiPrimerConsumoWCF.ServiceMedicamento.MedicamentoCLS oMedicamentoCLS);
+        System.Threading.Tasks.Task<int> RegistraryActualizarMedicamentoAsync(MiPrimerConsumoWCF.ServiceMedicamentos.MedicamentoCLS oMedicamentoCLS);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMedicamentos/EliminarMedicamento", ReplyAction="http://tempuri.org/IMedicamentos/EliminarMedicamentoResponse")]
         int EliminarMedicamento(int iidMedicamento);
@@ -283,12 +283,12 @@ namespace MiPrimerConsumoWCF.ServiceMedicamento {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IMedicamentosChannel : MiPrimerConsumoWCF.ServiceMedicamento.IMedicamentos, System.ServiceModel.IClientChannel {
+    public interface IMedicamentosChannel : MiPrimerConsumoWCF.ServiceMedicamentos.IMedicamentos, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class MedicamentosClient : System.ServiceModel.ClientBase<MiPrimerConsumoWCF.ServiceMedicamento.IMedicamentos>, MiPrimerConsumoWCF.ServiceMedicamento.IMedicamentos {
+    public partial class MedicamentosClient : System.ServiceModel.ClientBase<MiPrimerConsumoWCF.ServiceMedicamentos.IMedicamentos>, MiPrimerConsumoWCF.ServiceMedicamentos.IMedicamentos {
         
         public MedicamentosClient() {
         }
@@ -309,35 +309,35 @@ namespace MiPrimerConsumoWCF.ServiceMedicamento {
                 base(binding, remoteAddress) {
         }
         
-        public System.Collections.Generic.List<MiPrimerConsumoWCF.ServiceMedicamento.MedicamentoCLS> ListarMedicamentos() {
+        public System.Collections.Generic.List<MiPrimerConsumoWCF.ServiceMedicamentos.MedicamentoCLS> ListarMedicamentos() {
             return base.Channel.ListarMedicamentos();
         }
         
-        public System.Threading.Tasks.Task<System.Collections.Generic.List<MiPrimerConsumoWCF.ServiceMedicamento.MedicamentoCLS>> ListarMedicamentosAsync() {
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<MiPrimerConsumoWCF.ServiceMedicamentos.MedicamentoCLS>> ListarMedicamentosAsync() {
             return base.Channel.ListarMedicamentosAsync();
         }
         
-        public System.Collections.Generic.List<MiPrimerConsumoWCF.ServiceMedicamento.FormaFarmaceuticaCLS> ListaFormaFarmaceutica() {
+        public System.Collections.Generic.List<MiPrimerConsumoWCF.ServiceMedicamentos.FormaFarmaceuticaCLS> ListaFormaFarmaceutica() {
             return base.Channel.ListaFormaFarmaceutica();
         }
         
-        public System.Threading.Tasks.Task<System.Collections.Generic.List<MiPrimerConsumoWCF.ServiceMedicamento.FormaFarmaceuticaCLS>> ListaFormaFarmaceuticaAsync() {
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<MiPrimerConsumoWCF.ServiceMedicamentos.FormaFarmaceuticaCLS>> ListaFormaFarmaceuticaAsync() {
             return base.Channel.ListaFormaFarmaceuticaAsync();
         }
         
-        public MiPrimerConsumoWCF.ServiceMedicamento.MedicamentoCLS RecuperarMedicamento(int iidMedicamento) {
+        public MiPrimerConsumoWCF.ServiceMedicamentos.MedicamentoCLS RecuperarMedicamento(int iidMedicamento) {
             return base.Channel.RecuperarMedicamento(iidMedicamento);
         }
         
-        public System.Threading.Tasks.Task<MiPrimerConsumoWCF.ServiceMedicamento.MedicamentoCLS> RecuperarMedicamentoAsync(int iidMedicamento) {
+        public System.Threading.Tasks.Task<MiPrimerConsumoWCF.ServiceMedicamentos.MedicamentoCLS> RecuperarMedicamentoAsync(int iidMedicamento) {
             return base.Channel.RecuperarMedicamentoAsync(iidMedicamento);
         }
         
-        public int RegistraryActualizarMedicamento(MiPrimerConsumoWCF.ServiceMedicamento.MedicamentoCLS oMedicamentoCLS) {
+        public int RegistraryActualizarMedicamento(MiPrimerConsumoWCF.ServiceMedicamentos.MedicamentoCLS oMedicamentoCLS) {
             return base.Channel.RegistraryActualizarMedicamento(oMedicamentoCLS);
         }
         
-        public System.Threading.Tasks.Task<int> RegistraryActualizarMedicamentoAsync(MiPrimerConsumoWCF.ServiceMedicamento.MedicamentoCLS oMedicamentoCLS) {
+        public System.Threading.Tasks.Task<int> RegistraryActualizarMedicamentoAsync(MiPrimerConsumoWCF.ServiceMedicamentos.MedicamentoCLS oMedicamentoCLS) {
             return base.Channel.RegistraryActualizarMedicamentoAsync(oMedicamentoCLS);
         }
         

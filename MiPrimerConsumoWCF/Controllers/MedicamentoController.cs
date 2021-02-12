@@ -2,8 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Net;
 using System.Web.Mvc;
-using MiPrimerConsumoWCF.ServiceMedicamento;
+using MiPrimerConsumoWCF.ServiceMedicamentos;
+using System.Net.Security;
+using System.Security.Cryptography.X509Certificates;
 
 namespace MiPrimerConsumoWCF.Controllers
 {
@@ -13,6 +16,9 @@ namespace MiPrimerConsumoWCF.Controllers
         public JsonResult ListarMedicamentos()
         {
             MedicamentosClient oMedicamentosClient = new MedicamentosClient();
+            oMedicamentosClient.ClientCredentials.UserName.UserName = "lhurol";
+            oMedicamentosClient.ClientCredentials.UserName.Password = "1234";
+
             var lista = oMedicamentosClient.ListarMedicamentos()
                 .Where(p => p.BHabilitado == 1)
                 .Select(
@@ -33,6 +39,8 @@ namespace MiPrimerConsumoWCF.Controllers
         public JsonResult BuscarMedicamentosPorNombre(string NombreMedicamento)
         {
             MedicamentosClient oMedicamentosClient = new MedicamentosClient();
+            oMedicamentosClient.ClientCredentials.UserName.UserName = "lhurol";
+            oMedicamentosClient.ClientCredentials.UserName.Password = "1234";
             var lista = oMedicamentosClient.ListarMedicamentos()
                 .Where(p => p.BHabilitado == 1 && p.Nombre.ToLower().Contains(NombreMedicamento.ToLower()))
                 .Select(
@@ -53,6 +61,8 @@ namespace MiPrimerConsumoWCF.Controllers
         public JsonResult ListarFormaFarmaceutica()
         {
             MedicamentosClient oMedicamentosClient = new MedicamentosClient();
+            oMedicamentosClient.ClientCredentials.UserName.UserName = "lhurol";
+            oMedicamentosClient.ClientCredentials.UserName.Password = "1234";
             var lista = oMedicamentosClient.ListaFormaFarmaceutica()
             .Select(p => new
             {
@@ -66,7 +76,8 @@ namespace MiPrimerConsumoWCF.Controllers
             public JsonResult RecuperarMedicamento(int iidMedicamento)
         {
             MedicamentosClient oMedicamentosClient = new MedicamentosClient();
-
+            oMedicamentosClient.ClientCredentials.UserName.UserName = "lhurol";
+            oMedicamentosClient.ClientCredentials.UserName.Password = "1234";
             var medicamento = oMedicamentosClient.RecuperarMedicamento(iidMedicamento);
 
             return Json(medicamento, JsonRequestBehavior.AllowGet);
@@ -78,6 +89,8 @@ namespace MiPrimerConsumoWCF.Controllers
             try
             {
                 MedicamentosClient oMedicamentoClient = new MedicamentosClient();
+                oMedicamentoClient.ClientCredentials.UserName.UserName = "lhurol";
+                oMedicamentoClient.ClientCredentials.UserName.Password = "1234";
                 rpta = oMedicamentoClient.RegistraryActualizarMedicamento(oMedicamentoCLS);
             }
             catch (Exception)
@@ -95,6 +108,8 @@ namespace MiPrimerConsumoWCF.Controllers
             try
             {
                 MedicamentosClient oMedicamentoClient = new MedicamentosClient();
+                oMedicamentoClient.ClientCredentials.UserName.UserName = "lhurol";
+                oMedicamentoClient.ClientCredentials.UserName.Password = "1234";
                 rpta = oMedicamentoClient.EliminarMedicamento(iidMedicamento);
 
             }
@@ -107,7 +122,13 @@ namespace MiPrimerConsumoWCF.Controllers
         }
         public ActionResult Index()
         {
+            ServicePointManager.ServerCertificateValidationCallback = new System.Net.Security.RemoteCertificateValidationCallback(remove);
             return View();
+        }
+
+        private bool remove(object sender, X509Certificate certificate, X509Chain chain, SslPolicyErrors sslPolicyErrors)
+        {
+            return true;
         }
     }
 }

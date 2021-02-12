@@ -58,7 +58,7 @@ function Limpiar() {
 function Listar(res) {
     var contenido = "";
 
-    contenido += "<table class='table'>";
+    contenido += "<table id='table' class='table'>";
     contenido += "<thead class='table-dark'>";
     //Definimos las filas(definimos la primera fila)
     contenido += "<tr>";
@@ -89,7 +89,7 @@ function Listar(res) {
         contenido += "<td>" + item.Precio + "</td>";
         contenido += "<td>" + item.Presentacion + "</td>";
         contenido += "<td><input type='button' class='btn btn-primary' onclick='AbrirModal("+item.IidMedicamento+")' value='Editar' data-toggle='modal' data-target='#exampleModal'/>";
-        contenido += "<input type='button' class='btn btn-danger' value='Eliminar'/></td>";
+        contenido += "<input type='button'onclick='Eliminar(" + item.IidMedicamento+")' class='btn btn-danger' value='Eliminar'/></td>";
         contenido += "</tr>";
 
     }
@@ -98,8 +98,24 @@ function Listar(res) {
     contenido += "</table>";
 
     document.getElementById("divTabla").innerHTML = contenido;
-
+    $('#table').DataTable();
 }
+
+function Eliminar(iidmedicamento) {
+    if (confirm("¿Eliminar?")==1) {
+        fetch("Medicamento/EliminarMedicamento/?iidMedicamento=" + iidmedicamento)
+            .then(res => res.json())
+            .then(res => {
+                if (res==1) {
+                    ListarMedicamentos();
+                    alert("Eliminado");
+                } else {
+                    aler("Error");
+                }
+            })
+    }
+
+}     
 
 function AbrirModal(iidMedicamento) {
     Limpiar();
