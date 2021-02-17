@@ -7,7 +7,6 @@ using System.Web.Mvc;
 using MiPrimerConsumoWCF.ServiceMedicamentos;
 using System.Net.Security;
 using System.Security.Cryptography.X509Certificates;
-
 namespace MiPrimerConsumoWCF.Controllers
 {
     public class MedicamentoController : Controller
@@ -15,6 +14,9 @@ namespace MiPrimerConsumoWCF.Controllers
 
         public JsonResult ListarMedicamentos()
         {
+
+          
+
             MedicamentosClient oMedicamentosClient = new MedicamentosClient();
             oMedicamentosClient.ClientCredentials.UserName.UserName = "lhurol";
             oMedicamentosClient.ClientCredentials.UserName.Password = "1234";
@@ -34,6 +36,9 @@ namespace MiPrimerConsumoWCF.Controllers
                 }
                 ).ToList();
             return Json(lista, JsonRequestBehavior.AllowGet);
+
+          
+
         }
 
         public JsonResult BuscarMedicamentosPorNombre(string NombreMedicamento)
@@ -60,6 +65,9 @@ namespace MiPrimerConsumoWCF.Controllers
 
         public JsonResult ListarFormaFarmaceutica()
         {
+           
+
+           
             MedicamentosClient oMedicamentosClient = new MedicamentosClient();
             oMedicamentosClient.ClientCredentials.UserName.UserName = "lhurol";
             oMedicamentosClient.ClientCredentials.UserName.Password = "1234";
@@ -69,7 +77,10 @@ namespace MiPrimerConsumoWCF.Controllers
                 p.IidFormaFarmaceutica,
                 p.NombreFormaFarmaceutica
             }).ToList();
-            return Json(lista, JsonRequestBehavior.AllowGet);
+
+                return Json(lista, JsonRequestBehavior.AllowGet);
+
+           
         }
         // GET: Medicamento
 
